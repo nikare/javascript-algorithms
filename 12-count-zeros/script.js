@@ -4,10 +4,15 @@
  * Напишите функцию countZeros(n), принимающую на вход натуральное число n.
  * Возвращать функция должна суммарное количество нулей, содержащихся во всех числах от 1 до n включительно.
  *
-*/
+ */
 
 function countZeros(n) {
-    // Напишите код здесь
+  const zeroArray = [];
+  for (let i = 10; i <= n; i++) {
+    const zeros = `${i}`.split('').filter((value) => +value === 0);
+    zeros.forEach((zero) => zeroArray.push(zero));
+  }
+  return zeroArray.length;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
